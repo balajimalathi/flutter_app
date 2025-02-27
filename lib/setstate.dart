@@ -36,7 +36,7 @@ final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
  
 /// This is the stateless widget that the main application instantiates.
 class MyStatelessWidget extends StatelessWidget {
-  MyStatelessWidget({Key key}) : super(key: key);
+  MyStatelessWidget() : super();
 
   @override
   Widget build(BuildContext context) {

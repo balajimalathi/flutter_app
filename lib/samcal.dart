@@ -4,46 +4,36 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/chat.dart';
 import 'package:flutter_app/sam.dart';
 
-
 void main() {
-  runApp(MyTog(
-
-  ));
+  runApp(MyTog());
 }
 
 class MyTog extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body:Orders(),
-
-
+        body: Orders(),
       ),
     );
 
     // TODO: implement build
-
   }
-
 }
+
 class FavoriteWidget extends StatefulWidget {
   @override
   _FavoriteWidgetState createState() => _FavoriteWidgetState();
 }
 
-
 class _FavoriteWidgetState extends State<FavoriteWidget> {
-
   bool _isFavorited = true;
   int _favoriteCount = 41;
   DateTime selectedDate = DateTime.now();
 
   @override
   Widget build(BuildContext context) {
-
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -51,17 +41,17 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
           margin: EdgeInsets.only(top: 100),
           padding: EdgeInsets.all(10),
           child: Column(
-
             children: [
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween ,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.baseline,
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   IconButton(
                     alignment: Alignment.bottomRight,
-                    icon: (_isFavorited ? Icon(Icons.star) : Icon(
-                        Icons.star_border)),
+                    icon: (_isFavorited
+                        ? Icon(Icons.star)
+                        : Icon(Icons.star_border)),
                     color: Colors.red[500],
                     onPressed: _toggleFavorite,
                   ),
@@ -74,42 +64,36 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
                       ),
                     ),
                   ),
-
                   Column(
-
                     children: <Widget>[
-
                       SizedBox(
                         height: 20.0,
                       ),
-                      RaisedButton.icon(
-                        color: Colors.amber,
+                      ElevatedButton.icon(
                         onPressed: () => _selectDate(context),
-                        icon: Icon(Icons.calendar_today_outlined), label: Text(
-                        'Calendar',
-                        style:
-                        TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-                      ),
+                        icon: Icon(Icons.calendar_today_outlined),
+                        label: Text(
+                          'Calendar',
+                          style: TextStyle(
+                              color: Colors.black, fontWeight: FontWeight.bold),
+                        ),
                       ),
                       Text(
                         "${selectedDate.toLocal()}".split(' ')[0],
-                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 15, fontWeight: FontWeight.bold),
                       ),
                     ],
                   ),
-
                   Padding(
                     padding: const EdgeInsets.all(16.0),
-                    child: FlatButton.icon(
-                        color: Colors.amber,
+                    child: ElevatedButton.icon(
                         onPressed: () {},
                         icon: Icon(Icons.camera_alt),
                         label: Text('Camera')),
                   ),
-
                 ],
               ),
-
             ],
           ),
         ),
@@ -117,10 +101,8 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
     );
   }
 
-
-
   _selectDate(BuildContext context) async {
-    final DateTime picked = await showDatePicker(
+    final DateTime? picked = await showDatePicker(
       context: context,
       initialDate: selectedDate, // Refer step 1
       firstDate: DateTime(2000),
@@ -131,6 +113,7 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
         selectedDate = picked;
       });
   }
+
   void _toggleFavorite() {
     setState(() {
       if (_isFavorited) {
@@ -140,12 +123,6 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
         _favoriteCount += 1;
         _isFavorited = true;
       }
-    }
-
-    );
+    });
   }
-
 }
-
-
-
