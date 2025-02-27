@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
@@ -9,58 +8,51 @@ class Mor extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
           appBar: AppBar(
-            title: Text("Flutter Stack Widget Example"),
+            title: Text("Flutter Stack"),
           ),
           body: Center(
-                    child: Container(
-                      margin: EdgeInsets.only(top: 50),
-                      decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
+            child: Container(
+              margin: EdgeInsets.only(top: 50),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
                 color: Colors.black54,
               ),
               width: 380,
               height: 700,
-
               child: Stack(
-               children: <Widget> [
-                 Container(
-                   decoration: BoxDecoration(
-                     borderRadius: BorderRadius.circular(10),
-                     color: Colors.white,
-                   ),
-                   width: 380,
-                   height: 400,
-
-                 ),   Container(
-                   decoration: BoxDecoration(
-                     borderRadius: BorderRadius.circular(10),
-                     color: Colors.indigo,
-                   ),
-                   width: 380,
-                   height: 50,
-
-                 ),
-                 Opacity(
-                   opacity: 1,
-                   child: Container(
-                     margin: EdgeInsets.only(top: 40),
-                     decoration: BoxDecoration(
-                       borderRadius: BorderRadius.circular(10),
-                       color: Colors.blue,
-                     ),
-                     width: 380,
-                     height: 100,
-
-                   ),
-                 ),
-
-
-               ],
+                children: <Widget>[
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.white,
+                    ),
+                    width: 380,
+                    height: 400,
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.indigo,
+                    ),
+                    width: 380,
+                    height: 50,
+                  ),
+                  Opacity(
+                    opacity: 1,
+                    child: Container(
+                      margin: EdgeInsets.only(top: 40),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.blue,
+                      ),
+                      width: 380,
+                      height: 100,
+                    ),
+                  ),
+                ],
               ),
             ),
-
-          )
-      ),
+          )),
     );
   }
 }

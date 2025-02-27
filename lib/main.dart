@@ -5,8 +5,7 @@ import 'package:flutter_app/Myproject/register.dart';
 import 'package:flutter_app/Myproject/orders1.dart';
 import 'package:flutter_app/Myproject/order2.dart';
 void main() {
-  runApp(MyApp(
-  ));
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget{
