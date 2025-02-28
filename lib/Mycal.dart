@@ -34,8 +34,7 @@ class _HomeState extends State<Home> {
             Text(_date == null
                 ? 'Today'
                 : "${date1.day.toString().padLeft(2, '0')}-${date1.month.toString().padLeft(2, '0')}-${date1.year.toString()}"),
-            RaisedButton.icon(
-              color: Colors.teal,
+            FilledButton.icon( 
               icon: Icon(Icons.calendar_today),
               label: Text('Pick Date'),
 
