@@ -99,7 +99,7 @@ class _RLogin extends State<RLogin> {
                       //fillColor: Colors.green
                     ),
                     validator: (val) {
-                      if (val.length == 0) {
+                      if (val!.length == 0) {
                         return "Password cannot be empty";
                       } else {
                         return null;
@@ -135,16 +135,7 @@ class _RLogin extends State<RLogin> {
                       end: FractionalOffset.centerRight,
                     ),
                   ),
-                  child: FlatButton(
-                    /*color: Colors.pinkAccent,*/
-                    textColor: Colors.white,
-                    disabledColor: Colors.grey,
-                    disabledTextColor: Colors.black,
-                    padding: EdgeInsets.all(15.0),
-                    splashColor: Colors.blueAccent,
-                    minWidth: 320,
-                    shape: new RoundedRectangleBorder(
-                        borderRadius: new BorderRadius.circular(10.0)),
+                  child: FilledButton(
                     onPressed: () {
                       /*...*/
                     },
