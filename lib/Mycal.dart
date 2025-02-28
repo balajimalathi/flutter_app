@@ -8,7 +8,7 @@ class Date extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
           primarySwatch: Colors.blue,
-          textTheme: TextTheme(bodyText1: TextStyle(fontSize: 21))),
+          textTheme: TextTheme(bodyMedium: TextStyle(fontSize: 21))),
       home: Home(),
     );
   }
