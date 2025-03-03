@@ -94,7 +94,7 @@ class _LoginPageState extends State<LoginPage>{
                       //fillColor: Colors.green
                     ),
                     validator: (val) {
-                      if (val.length == 0) {
+                      if (val?.length == 0) {
                         return "Name cannot be empty";
                       } else {
                         return null;
@@ -125,7 +125,7 @@ class _LoginPageState extends State<LoginPage>{
                       //fillColor: Colors.green
                     ),
                     validator: (val) {
-                      if (val.length == 0) {
+                      if (val?.length == 0) {
                         return "Email ID cannot be empty";
                       } else {
                         return null;
@@ -156,7 +156,7 @@ class _LoginPageState extends State<LoginPage>{
                       //fillColor: Colors.green
                     ),
                     validator: (val) {
-                      if (val.length == 0) {
+                      if (val?.length == 0) {
                         return "Password cannot be empty";
                       } else {
                         return null;
@@ -178,16 +178,7 @@ class _LoginPageState extends State<LoginPage>{
                       end: FractionalOffset.centerRight,
                     ),
                   ),
-                  child: FlatButton(
-                    /*color: Colors.pinkAccent,*/
-                    textColor: Colors.white,
-                    disabledColor: Colors.grey,
-                    disabledTextColor: Colors.black,
-                    padding: EdgeInsets.all(15.0),
-                    splashColor: Colors.blueAccent,
-                    minWidth: 320,
-                    shape: new RoundedRectangleBorder(
-                        borderRadius: new BorderRadius.circular(10.0)),
+                  child: FilledButton(
                     onPressed: () {
                       /*...*/
                     },
@@ -202,17 +193,8 @@ class _LoginPageState extends State<LoginPage>{
 
                 ),
 
-                FlatButton.icon(
+                FilledButton.icon(
                   icon:Icon(Icons.icecream,color: Colors.indigo),
-                  color: Colors.black12,
-                  textColor: Colors.blue,
-                  disabledColor: Colors.grey,
-                  disabledTextColor: Colors.black,
-                  padding: EdgeInsets.all(15.0),
-                  splashColor: Colors.blueAccent,
-                  minWidth: 320,
-                  shape: new RoundedRectangleBorder(
-                      borderRadius: new BorderRadius.circular(10.0)),
                   onPressed: () {},
                   label: Text(
                     " Connect with Facebook",
