@@ -160,9 +160,9 @@ class _MyOrders1_State extends State<Orders1> {
   }
 }
 class Prd extends StatelessWidget {
-  final String label, hint;
+  final String? label, hint;
   const Prd({
-    Key key,
+    Key? key,
     this.label,
     this.hint,
 
@@ -176,7 +176,7 @@ class Prd extends StatelessWidget {
           child: Row(
 
             children: [
-             Text(label)
+             Text(label ?? '')
             ],
           ),
         ),
@@ -198,7 +198,7 @@ class Prd extends StatelessWidget {
             ),
 
             child: Row(
-              children: [Text(hint)],
+              children: [Text(hint ?? '')],
             ),
           ),
         ),
