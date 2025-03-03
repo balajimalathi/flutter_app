@@ -19,8 +19,8 @@ class _Mynavbar extends State<Mynavbar> {
         backgroundColor: colorScheme.surface,
         selectedItemColor: colorScheme.onSurface,
         unselectedItemColor: colorScheme.onSurface.withOpacity(.60),
-        selectedLabelStyle: textTheme.caption,
-        unselectedLabelStyle: textTheme.caption,
+        selectedLabelStyle: textTheme.labelSmall,
+        unselectedLabelStyle: textTheme.labelSmall,
         onTap: (value) {
           // Respond to item press.
           setState(() => _currentIndex = value);
@@ -59,12 +59,12 @@ ThemeData _buildShrineTheme() {
 TextTheme _buildShrineTextTheme(TextTheme base) {
   return base
       .copyWith(
-    caption: base.caption.copyWith(
+    labelSmall: base.labelSmall?.copyWith(
       fontWeight: FontWeight.w400,
       fontSize: 14,
       letterSpacing: defaultLetterSpacing,
     ),
-    button: base.button.copyWith(
+    labelMedium: base.labelMedium?.copyWith(
       fontWeight: FontWeight.w500,
       fontSize: 14,
       letterSpacing: defaultLetterSpacing,
@@ -79,16 +79,12 @@ TextTheme _buildShrineTextTheme(TextTheme base) {
 
 const ColorScheme _shrineColorScheme = ColorScheme(
   primary: shrinePink100,
-  primaryVariant: shrineBrown900,
   secondary: shrinePink50,
-  secondaryVariant: shrineBrown900,
   surface: shrineSurfaceWhite,
-  background: shrineBackgroundWhite,
   error: shrineErrorRed,
   onPrimary: shrineBrown900,
   onSecondary: shrineBrown900,
   onSurface: shrineBrown900,
-  onBackground: shrineBrown900,
   onError: shrineSurfaceWhite,
   brightness: Brightness.light,
 );
