@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class RegState extends StatefulWidget {
-  const RegState({ Key key }) : super(key: key);
+  const RegState({ Key? key }) : super(key: key);
 
   @override
   _RegState createState() => _RegState();
@@ -93,7 +93,7 @@ class _RegState extends State<RegState> {
                       print("First text field: $text");
                     },
                     validator: (value) {
-                      if (value.isEmpty) {
+                      if (value!.isEmpty) {
                         return 'Please enter Username';
                       }
                       return null;
@@ -128,7 +128,7 @@ class _RegState extends State<RegState> {
                     },
 
                     validator: (value) {
-                      if (value.isEmpty) {
+                      if (value!.isEmpty) {
                         return 'Please enter email';
                       }
                       return null;
@@ -157,7 +157,7 @@ class _RegState extends State<RegState> {
                   child:TextFormField(
                     controller: myController,
                     validator: (value) {
-                      if (value.isEmpty) {
+                      if (value!.isEmpty) {
                         return 'Please enter password';
                       }
                       return null;
@@ -191,9 +191,9 @@ class _RegState extends State<RegState> {
                     onPressed: () {
                       // Validate returns true if the form is valid, or false
                       // otherwise.
-                      if (_formKey.currentState.validate()) {
+                      if (_formKey.currentState!.validate()) {
                         // If the form is valid, display a Snackbar.
-                        Scaffold.of(context).showSnackBar(SnackBar(content: Text('Processing Data')));
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Processing Data')));
                       }
                     },
                   ),
