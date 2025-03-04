@@ -48,7 +48,7 @@ void openPage(BuildContext context) {
                 ),
 
 
-                trailing: FlatButton.icon(
+                trailing: FilledButton.icon(
                   onPressed: () {},
                   icon: Icon(Icons.check,
                       color: Colors.green),
@@ -118,7 +118,7 @@ class Msg extends StatelessWidget {
             icon: const Icon(Icons.search),
             tooltip: 'Searching',
             onPressed: () {
-              scaffoldKey.currentState.showSnackBar(snackBar);
+              ScaffoldMessenger.of(context).showSnackBar(snackBar);
             },
           ),
         ],
@@ -162,7 +162,7 @@ class Msg extends StatelessWidget {
 
 
                 trailing:
-                FlatButton.icon(
+                FilledButton.icon(
                   onPressed: () {},
                   icon: Icon(Icons.check,
                       color: Colors.green),
