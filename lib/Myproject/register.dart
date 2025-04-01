@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class RegState extends StatefulWidget {
-  const RegState({ Key? key }) : super(key: key);
+  const RegState({Key? key}) : super(key: key);
 
   @override
   _RegState createState() => _RegState();
@@ -32,16 +32,17 @@ class _RegState extends State<RegState> {
   _printLatestValue() {
     print("Third text field: ${myController.text}");
   }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner:false,
+      debugShowCheckedModeBanner: false,
       title: 'Registration',
       home: Scaffold(
         appBar: AppBar(
-          leading:Icon(Icons.arrow_back),
+          leading: Icon(Icons.arrow_back),
           title: const Text('Registration'),
-          actions:[
+          actions: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: const <Widget>[
@@ -53,157 +54,145 @@ class _RegState extends State<RegState> {
                 ),
                 Icon(
                   Icons.more_vert,
-
                 ),
               ],
             ),
           ],
         ),
-        body:
-        Form(
-        key: _formKey,
-        child:Center(
-          child:
-          SingleChildScrollView(
-            child:
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children:<Widget>[
-                SizedBox(
-
-                  height:
-                  10,
-                ),
-                CircleAvatar(
-                  backgroundColor:Colors.blue,
-                  radius:50,
-                  child:Icon(Icons.person, color:Colors.white ,size:40),
-
-
-                ),
-
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical:16,horizontal:16),
-                  child:Divider(),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical:16,horizontal:16),
-                  child:TextFormField(
-                    onChanged: (text) {
-                      print("First text field: $text");
-                    },
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        return 'Please enter Username';
-                      }
-                      return null;
-                    },
-                    decoration:InputDecoration(
-                      prefixIcon:Icon(Icons.person),
-                      labelText:('Username'),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: const BorderRadius.all(
-                          const Radius.circular(10.0),
-                        ),
-                        borderSide: BorderSide(
-                          color:Colors.blue,
-
-
-                        ),
-                      ),
-                      border: OutlineInputBorder(
-                        borderRadius: const BorderRadius.all(
-                          const Radius.circular(10.0),
-                        ),),
-                    ),
-
+        body: Form(
+          key: _formKey,
+          child: Center(
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  SizedBox(
+                    height: 10,
                   ),
-                ),
-
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical:16,horizontal:16),
-                  child:TextFormField(
-                    onChanged: (text) {
-                      print("Second text field: $text");
-                    },
-
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        return 'Please enter email';
-                      }
-                      return null;
-                    },
-                    decoration:InputDecoration(
-                      prefixIcon:Icon(Icons.email),
-                      labelText:('Email'),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: const BorderRadius.all(
-                          const Radius.circular(10.0),
-                        ),
-                        borderSide: BorderSide(
-                          color:Colors.blue,
-
-                        ),
-                      ),
-                      border: OutlineInputBorder(
-                        borderRadius: const BorderRadius.all(
-                          const Radius.circular(10.0),
-                        ),),
-                    ),
-                   ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical:16,horizontal:16),
-                  child:TextFormField(
-                    controller: myController,
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        return 'Please enter password';
-                      }
-                      return null;
-                    },
-                    decoration:InputDecoration(
-                      prefixIcon:Icon(Icons.security),
-                      labelText:('Password'),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: const BorderRadius.all(
-                          const Radius.circular(10.0),
-                        ),
-                        borderSide: BorderSide(
-                          color:Colors.blue,
-
-                        ),
-                      ),
-                      border: OutlineInputBorder(
-                        borderRadius: const BorderRadius.all(
-                          const Radius.circular(10.0),
-                        ),),
-                    ),
-
-
-                    ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical:16,horizontal:16),
-                  child: MaterialButton(
-                    child:Text('Register',style:TextStyle(color:Colors.white),),
-                    color: Colors.blue,
-                    onPressed: () {
-                      // Validate returns true if the form is valid, or false
-                      // otherwise.
-                      if (_formKey.currentState!.validate()) {
-                        // If the form is valid, display a Snackbar.
-                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Processing Data')));
-                      }
-                    },
+                  CircleAvatar(
+                    backgroundColor: Colors.blue,
+                    radius: 50,
+                    child: Icon(Icons.person, color: Colors.white, size: 40),
                   ),
-
-                ),
-              ],
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+                    child: Divider(),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+                    child: TextFormField(
+                      onChanged: (text) {
+                        print("First text field: $text");
+                      },
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return 'Please enter Username';
+                        }
+                        return null;
+                      },
+                      decoration: InputDecoration(
+                        prefixIcon: Icon(Icons.person),
+                        labelText: ('Username'),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: const BorderRadius.all(
+                            const Radius.circular(10.0),
+                          ),
+                          borderSide: BorderSide(
+                            color: Colors.blue,
+                          ),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: const BorderRadius.all(
+                            const Radius.circular(10.0),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+                    child: TextFormField(
+                      onChanged: (text) {
+                        print("Second text field: $text");
+                      },
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return 'Please enter email';
+                        }
+                        return null;
+                      },
+                      decoration: InputDecoration(
+                        prefixIcon: Icon(Icons.email),
+                        labelText: ('Email'),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: const BorderRadius.all(
+                            const Radius.circular(10.0),
+                          ),
+                          borderSide: BorderSide(
+                            color: Colors.blue,
+                          ),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: const BorderRadius.all(
+                            const Radius.circular(10.0),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+                    child: TextFormField(
+                      controller: myController,
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return 'Please enter password';
+                        }
+                        return null;
+                      },
+                      decoration: InputDecoration(
+                        prefixIcon: Icon(Icons.security),
+                        labelText: ('Password'),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: const BorderRadius.all(
+                            const Radius.circular(10.0),
+                          ),
+                          borderSide: BorderSide(
+                            color: Colors.blue,
+                          ),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: const BorderRadius.all(
+                            const Radius.circular(10.0),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+                    child: MaterialButton(
+                      child: Text(
+                        'Register',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      color: Colors.blue,
+                      onPressed: () {
+                        // Validate returns true if the form is valid, or false
+                        // otherwise.
+                        if (_formKey.currentState!.validate()) {
+                          // If the form is valid, display a Snackbar.
+                          ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(content: Text('Processing Data')));
+                        }
+                      },
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
-      ),
       ),
     );
   }

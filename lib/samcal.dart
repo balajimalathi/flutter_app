@@ -17,8 +17,6 @@ class MyTog extends StatelessWidget {
         body: Orders(),
       ),
     );
-
-    // TODO: implement build
   }
 }
 
